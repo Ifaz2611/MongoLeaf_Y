@@ -6,11 +6,13 @@ conditions using a pre-trained deep learning model.
 ## How It Works
 
 1. User uploads a leaf image through the browser UI (`templates/index.html`,
-   `static/js/script.js`).
+   `static/js/script.js`) — by browsing, drag-and-drop, or pasting from the
+   clipboard. The UI validates the file type and size and shows a preview.
 2. The image is sent to `POST /predict` in `app.py`.
 3. The image is resized to 224×224, normalized to [0, 1], and passed through
    the model.
-4. The API returns the predicted label and a confidence score (0–1).
+4. The API returns the predicted label and a confidence score (0–1). The UI
+   renders the condition, a confidence meter, and practical treatment steps.
 
 ## Classes
 
@@ -29,7 +31,7 @@ conditions using a pre-trained deep learning model.
 
 - **Backend:** Python, Flask, Flask-CORS, Waitress (Windows) / Gunicorn (Linux)
 - **ML:** TensorFlow / Keras (ResNet50 transfer learning)
-- **Frontend:** HTML, CSS, vanilla JavaScript
+- **Frontend:** HTML, CSS, vanilla JavaScript (responsive, accessible, no build step)
 - **Deploy:** Render (see `Procfile`, `runtime.txt`)
 
 ## Requirements
@@ -93,9 +95,9 @@ Returns `{"status": "ok"}` and can be used as a deployment health check.
 
 ```
 app.py                  # Flask app, model loading, /predict endpoint
-templates/index.html    # Upload UI
-static/css/style.css    # Styles
-static/js/script.js     # Client-side upload logic
+templates/index.html    # Scanner, field guide, and result UI
+static/css/style.css    # Design system and responsive styles
+static/js/script.js     # Upload, validation, and prediction logic
 models/                 # Downloaded model weights (git-ignored)
 uploads/                # Temporary uploads, cleaned after each request (git-ignored)
 saved_results/          # Training history & evaluation metrics (JSON)
@@ -116,6 +118,9 @@ and the app also binds to `PORT` from the environment when run directly
 
 ### Home / Upload
 ![Upload page](screenshots/home_page.png)
+
+### Photo selected
+![Selected photo](screenshots/upload_page.png)
 
 ### Result
 ![Prediction result](screenshots/prediction_result.png)
