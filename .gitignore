@@ -1,0 +1,15 @@
+# Ignore uploads folder
+uploads/
+
+# Ignore model files
+*.h5
+*.keras
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environment (if any)
+venv/
+.env/
