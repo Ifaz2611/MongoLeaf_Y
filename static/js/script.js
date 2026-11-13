@@ -53,11 +53,8 @@ const suggestionsMap = {
     ]
 };
 
-// Auto-detect backend URL
-const backendURL = window.location.hostname.includes("localhost") || window.location.hostname.includes("127.0.0.1")
-    ? "http://127.0.0.1:5000"
-    : "https://mangomedix.onrender.com";
-
+// The API is served by the same Flask app, so use a relative URL.
+// This works locally and on any deployment host without hardcoding a domain.
 async function predictDisease() {
     const fileInput = document.getElementById('imageInput');
     const resultDiv = document.getElementById('result');
@@ -76,7 +73,7 @@ async function predictDisease() {
     suggestionDiv.innerHTML = "";
 
     try {
-        const response = await fetch(`${backendURL}/predict`, {
+        const response = await fetch('/predict', {
             method: 'POST',
             body: formData
         });

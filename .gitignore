@@ -1,15 +1,28 @@
-# Ignore uploads folder
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Uploaded images
 uploads/
 
-# Ignore model files
+# Downloaded model weights
+models/
 *.h5
 *.keras
 
-# Ignore Python cache
+# Python cache
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*.egg-info/
+.pytest_cache/
 
-# Ignore virtual environment (if any)
-venv/
-.env/
+# Environment files
+.env
+.env.*
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
