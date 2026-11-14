@@ -11,6 +11,11 @@ models/
 *.h5
 *.keras
 
+# Training dataset (download from Kaggle — see readme.md)
+Dataset/
+dataset/
+Datasets/
+
 # Python cache
 __pycache__/
 *.py[cod]

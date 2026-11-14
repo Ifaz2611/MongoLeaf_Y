@@ -14,15 +14,14 @@ try:
 except ImportError:
     from tensorflow.keras.preprocessing.image import img_to_array, load_img
 
-# Paths are resolved from this file so the app behaves the same no matter
-# which directory it is started from (local dev, gunicorn, Render, ...).
+
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_DIR = BASE_DIR / "models"
 MODEL_PATH = MODEL_DIR / "disease_detector.keras"
 UPLOAD_DIR = BASE_DIR / "uploads"
 
 # Google Drive model file (direct download link)
-MODEL_URL = "https://drive.google.com/uc?id=1XaKARuL5HE9cZdvGKUKmNqjYrnWLzqdp"
+MODEL_URL = "https://drive.google.com/uc?id=1JK5WqTkNuKq5uPXIZmneB_3Hvb4Uuqsu"
 
 # Allowed file types
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
