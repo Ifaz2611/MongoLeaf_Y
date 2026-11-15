@@ -542,4 +542,21 @@
             });
         });
     }
+
+    /* ---------- Individual advisory exclusive toggle ---------- */
+
+    var advisories = document.querySelectorAll(".condition-advisory");
+    if (advisories.length) {
+        advisories.forEach(function (advisory) {
+            advisory.addEventListener("toggle", function () {
+                if (advisory.open) {
+                    advisories.forEach(function (other) {
+                        if (other !== advisory && other.open) {
+                            other.open = false;
+                        }
+                    });
+                }
+            });
+        });
+    }
 })();

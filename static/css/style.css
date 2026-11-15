@@ -1471,12 +1471,15 @@ h3 {
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
     list-style: none;
+    align-items: start;
 }
 
 .condition-card {
     display: flex;
     flex-direction: column;
     min-height: 220px;
+    height: auto;
+    align-self: start;
     padding: 22px 20px 18px;
     border: 1px solid var(--line);
     border-radius: var(--radius-md);
