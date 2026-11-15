@@ -329,83 +329,624 @@
                         <p class="eyebrow">02 — The field guide</p>
                         <h2>Eight conditions,<br>one scan away.</h2>
                     </div>
-                    <p class="section-sub">The model was trained to recognise the conditions below. Learn the visual signs so you can double-check a diagnosis in the orchard.</p>
+                    <p class="section-sub">Trained on eight critical mango orchard conditions. Review field identification signs, high-risk weather triggers, cultural sanitation, and proven treatment dosages.</p>
                 </div>
 
+                <!-- Category filter tabs -->
+                <div class="condition-filter" role="tablist" aria-label="Filter conditions by category">
+                    <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">
+                        All <span class="filter-count">8</span>
+                    </button>
+                    <button type="button" class="filter-btn" data-filter="fungal" role="tab" aria-selected="false">
+                        Fungal <span class="filter-count">4</span>
+                    </button>
+                    <button type="button" class="filter-btn" data-filter="bacterial" role="tab" aria-selected="false">
+                        Bacterial <span class="filter-count">1</span>
+                    </button>
+                    <button type="button" class="filter-btn" data-filter="pest" role="tab" aria-selected="false">
+                        Insect Pests <span class="filter-count">2</span>
+                    </button>
+                    <button type="button" class="filter-btn" data-filter="healthy" role="tab" aria-selected="false">
+                        Healthy <span class="filter-count">1</span>
+                    </button>
+                </div>
+
+                <!-- Condition cards grid -->
                 <ul class="condition-grid">
-                    <li class="condition-card condition-card-healthy">
+                    <li class="condition-card condition-card-healthy" data-category="healthy">
                         <div class="condition-top">
                             <span class="condition-tag">Healthy</span>
                             <span class="condition-dot" aria-hidden="true"></span>
                         </div>
                         <h3>Healthy leaf</h3>
-                        <p>Uniform green, glossy surface with no lesions, spots, curling or powdery growth.</p>
-                        <span class="condition-foot">Keep monitoring new growth</span>
+                        <p class="condition-latin">Mangifera indica (Reference)</p>
+                        <p class="condition-desc">Uniform deep green, glossy surface with intact cuticle and zero lesions, spots, curling, or fungal growth.</p>
+
+                        <div class="condition-specs">
+                            <div class="spec-row">
+                                <span class="spec-key">Part:</span>
+                                <span class="spec-val">All canopy foliage &amp; panicles</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">Goal:</span>
+                                <span class="spec-val">Optimal photosynthesis &amp; tree vigor</span>
+                            </div>
+                        </div>
+
+                        <details class="condition-advisory">
+                            <summary class="advisory-toggle">
+                                <span>Farmer Field Advisory</span>
+                                <svg class="advisory-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                            </summary>
+                            <div class="advisory-body">
+                                <div class="advisory-item">
+                                    <strong>Weekly Scouting:</strong>
+                                    Inspect 20 random leaves per tree once a week across all 4 quadrants of the canopy to catch early spots.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Soil &amp; Nutrition:</strong>
+                                    Apply 30–50 kg aged Farm Yard Manure (FYM) per mature tree post-harvest. Spray Zinc (0.2%) + Borax (0.1%) during new vegetative flush.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Irrigation Hygiene:</strong>
+                                    Irrigate deeply along the root drip-line; never wet canopy foliage with overhead sprinklers.
+                                </div>
+                            </div>
+                        </details>
+
+                        <span class="condition-foot">Keep monitoring new flush &amp; pre-bloom</span>
                     </li>
-                    <li class="condition-card">
+
+                    <li class="condition-card" data-category="fungal">
                         <div class="condition-top">
                             <span class="condition-tag">Fungal</span>
                             <span class="condition-dot" aria-hidden="true"></span>
                         </div>
                         <h3>Anthracnose</h3>
-                        <p>Dark, sunken spots on leaves, twigs and fruit; lesions can merge into larger patches.</p>
-                        <span class="condition-foot">Thrives in warm, wet weather</span>
+                        <p class="condition-latin">Colletotrichum gloeosporioides</p>
+                        <p class="condition-desc">Dark, sunken spots on leaves, twigs and fruit; lesions can merge into larger patches and cause severe blossom blight.</p>
+
+                        <div class="condition-specs">
+                            <div class="spec-row">
+                                <span class="spec-key">Part:</span>
+                                <span class="spec-val">Tender leaves, panicles, twigs, fruit</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">Trigger:</span>
+                                <span class="spec-val">Warm &amp; wet weather (24–30°C, RH &gt;80%)</span>
+                            </div>
+                        </div>
+
+                        <details class="condition-advisory">
+                            <summary class="advisory-toggle">
+                                <span>Farmer Field Advisory</span>
+                                <svg class="advisory-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                            </summary>
+                            <div class="advisory-body">
+                                <div class="advisory-item">
+                                    <strong>Visual Clues:</strong>
+                                    Angular dark brown spots that dry and crack into "shot-holes"; flower panicles turn black and shrivel within 48h of rain.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Sanitation:</strong>
+                                    Prune dead twigs 5–10 cm into green wood; rake and burn fallen leaves and mummified fruit on the orchard floor.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Chemical Spray &amp; Dosage:</strong>
+                                    Copper Oxychloride 50 WP @ 2.5–3.0 g/L or Mancozeb 75 WP @ 2.0 g/L preventive. Curative: Carbendazim 50 WP @ 1.0 g/L or Azoxystrobin @ 1.0 ml/L.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Pollinator Note:</strong>
+                                    Never spray during full bloom to protect honeybees and fruit set.
+                                </div>
+                            </div>
+                        </details>
+
+                        <span class="condition-foot">Thrives in warm, wet weather &amp; rain splash</span>
                     </li>
-                    <li class="condition-card">
+
+                    <li class="condition-card" data-category="bacterial">
                         <div class="condition-top">
                             <span class="condition-tag">Bacterial</span>
                             <span class="condition-dot" aria-hidden="true"></span>
                         </div>
                         <h3>Bacterial Canker</h3>
-                        <p>Raised, corky lesions often ringed by a yellow halo; shoots may wilt and die back.</p>
-                        <span class="condition-foot">Spreads with rain splash</span>
+                        <p class="condition-latin">Xanthomonas citri pv. mangiferaeindicae</p>
+                        <p class="condition-desc">Raised, corky lesions often ringed by a yellow halo; causes gummy exudation, shoot die-off, and fruit drop.</p>
+
+                        <div class="condition-specs">
+                            <div class="spec-row">
+                                <span class="spec-key">Part:</span>
+                                <span class="spec-val">Leaves, young twigs, fruit skin</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">Trigger:</span>
+                                <span class="spec-val">Windstorms, hail injuries, rain splash (25–32°C)</span>
+                            </div>
+                        </div>
+
+                        <details class="condition-advisory">
+                            <summary class="advisory-toggle">
+                                <span>Farmer Field Advisory</span>
+                                <svg class="advisory-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                            </summary>
+                            <div class="advisory-body">
+                                <div class="advisory-item">
+                                    <strong>Visual Clues:</strong>
+                                    Water-soaked angular dark spots surrounded by a bright yellow halo; raised, rough crusts; gummy sap oozing from twigs.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Sanitation &amp; Tools:</strong>
+                                    Prune shoots only during dry weather. Dip secateurs in 10% household bleach or 70% alcohol between trees.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Bactericide Spray:</strong>
+                                    Streptocycline (or Streptomycin) @ 0.15–0.2 g/L combined with Copper Oxychloride 50 WP @ 2.5 g/L at 15-day intervals.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Organic Alternative:</strong>
+                                    Copper hydroxide @ 2.0 g/L sprayed twice during early vegetative shoot flush.
+                                </div>
+                            </div>
+                        </details>
+
+                        <span class="condition-foot">Spreads with rain splash &amp; unsterilized shears</span>
                     </li>
-                    <li class="condition-card">
+
+                    <li class="condition-card" data-category="pest">
                         <div class="condition-top">
                             <span class="condition-tag">Pest</span>
                             <span class="condition-dot" aria-hidden="true"></span>
                         </div>
                         <h3>Cutting Weevil</h3>
-                        <p>Notched, ragged leaf edges where adult weevils have fed on the leaf margin.</p>
-                        <span class="condition-foot">Look for feeding at night</span>
+                        <p class="condition-latin">Deporaus marginatus</p>
+                        <p class="condition-desc">Notched, ragged leaf edges where adult weevils feed; tender new leaves cleanly severed straight across like scissors.</p>
+
+                        <div class="condition-specs">
+                            <div class="spec-row">
+                                <span class="spec-key">Part:</span>
+                                <span class="spec-val">Tender new flush &amp; young leaves</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">Trigger:</span>
+                                <span class="spec-val">Vegetative flush emergence; active at dusk/night</span>
+                            </div>
+                        </div>
+
+                        <details class="condition-advisory">
+                            <summary class="advisory-toggle">
+                                <span>Farmer Field Advisory</span>
+                                <svg class="advisory-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                            </summary>
+                            <div class="advisory-body">
+                                <div class="advisory-item">
+                                    <strong>Visual Clues:</strong>
+                                    Leaves cleanly severed across the blade; severed leaf tips littering the ground below the canopy containing weevil eggs.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Sanitation &amp; Tillage:</strong>
+                                    Collect and burn or bury fallen severed leaves daily to kill eggs before larvae burrow into soil. Lightly till basin soil.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Targeted Control:</strong>
+                                    Spray 5% Neem Seed Kernel Extract (NSKE) or Spinosad 45 SC @ 0.3 ml/L or Chlorpyrifos 20 EC @ 2.0 ml/L at first flush sign.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Monitoring:</strong>
+                                    Inspect newly flushed trees at twilight with a flashlight when adult weevils feed actively.
+                                </div>
+                            </div>
+                        </details>
+
+                        <span class="condition-foot">Look for severed leaves on ground &amp; nocturnal feeding</span>
                     </li>
-                    <li class="condition-card">
+
+                    <li class="condition-card" data-category="fungal">
                         <div class="condition-top">
                             <span class="condition-tag">Fungal</span>
                             <span class="condition-dot" aria-hidden="true"></span>
                         </div>
                         <h3>Die Back</h3>
-                        <p>Shoots brown from the tip downward; dry, brittle twigs and sparse foliage.</p>
-                        <span class="condition-foot">Often follows stress or injury</span>
+                        <p class="condition-latin">Lasiodiplodia theobromae</p>
+                        <p class="condition-desc">Shoots brown and wither from the tip downward; dead brown leaves remain stubbornly attached to dry, brittle twigs.</p>
+
+                        <div class="condition-specs">
+                            <div class="spec-row">
+                                <span class="spec-key">Part:</span>
+                                <span class="spec-val">Terminal twigs, branches, vascular tissue</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">Trigger:</span>
+                                <span class="spec-val">Drought stress, waterlogging, unsealed pruning cuts</span>
+                            </div>
+                        </div>
+
+                        <details class="condition-advisory">
+                            <summary class="advisory-toggle">
+                                <span>Farmer Field Advisory</span>
+                                <svg class="advisory-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                            </summary>
+                            <div class="advisory-body">
+                                <div class="advisory-item">
+                                    <strong>Visual Clues:</strong>
+                                    Downward branch browning; dead leaves stay attached rather than dropping; dark discoloration inside split twigs.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Deep Pruning:</strong>
+                                    Prune affected twigs 7–10 cm below the visible dead margin into healthy green wood. Burn all pruned branches at once.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Cut Dressing:</strong>
+                                    Immediately apply a thick Copper Oxychloride paste (1:1 with water or linseed oil) on all cut ends thicker than a finger.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Foliar Spray:</strong>
+                                    Thiophanate-methyl 70 WP @ 1.0 g/L or Carbendazim 50 WP @ 1.0 g/L sprayed twice post-pruning.
+                                </div>
+                            </div>
+                        </details>
+
+                        <span class="condition-foot">Often follows stress, drought or unsealed pruning wounds</span>
                     </li>
-                    <li class="condition-card">
+
+                    <li class="condition-card" data-category="pest">
                         <div class="condition-top">
                             <span class="condition-tag">Pest</span>
                             <span class="condition-dot" aria-hidden="true"></span>
                         </div>
                         <h3>Gall Midge</h3>
-                        <p>Small, blister-like galls on leaves and new shoots; distorted, stunted growth.</p>
-                        <span class="condition-foot">Check tender new flush</span>
+                        <p class="condition-latin">Procontarinia matteiana</p>
+                        <p class="condition-desc">Small, blister-like wart galls on leaves and new shoots; heavy galling causes leaves to curl, twist, and drop early.</p>
+
+                        <div class="condition-specs">
+                            <div class="spec-row">
+                                <span class="spec-key">Part:</span>
+                                <span class="spec-val">Tender new leaves &amp; growing shoots</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">Trigger:</span>
+                                <span class="spec-val">Flush emergence; still, warm and humid weather</span>
+                            </div>
+                        </div>
+
+                        <details class="condition-advisory">
+                            <summary class="advisory-toggle">
+                                <span>Farmer Field Advisory</span>
+                                <svg class="advisory-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                            </summary>
+                            <div class="advisory-body">
+                                <div class="advisory-item">
+                                    <strong>Visual Clues:</strong>
+                                    Dense raised pimples on leaf blade; distorted stunted growth; tiny exit pinholes on older dried blisters.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Sanitation:</strong>
+                                    Prune and destroy heavily galled shoots before adult midges emerge. Preserve native parasitic wasps.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Soil Cultivation:</strong>
+                                    Lightly till orchard tree basins to bury pupating larvae and expose them to predatory birds and sun.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Insecticide Spray:</strong>
+                                    Spray 5% NSKE or Imidacloprid 17.8 SL @ 0.3 ml/L or Dimethoate 30 EC @ 1.5 ml/L at first flush emergence.
+                                </div>
+                            </div>
+                        </details>
+
+                        <span class="condition-foot">Check tender new flush &amp; leaf undersides</span>
                     </li>
-                    <li class="condition-card">
+
+                    <li class="condition-card" data-category="fungal">
                         <div class="condition-top">
                             <span class="condition-tag">Fungal</span>
                             <span class="condition-dot" aria-hidden="true"></span>
                         </div>
                         <h3>Powdery Mildew</h3>
-                        <p>White, powdery coating on the leaf surface, often starting in scattered patches.</p>
-                        <span class="condition-foot">Improve airflow through the canopy</span>
+                        <p class="condition-latin">Oidium mangiferae</p>
+                        <p class="condition-desc">White, powdery coating on leaf surface, shoots and flower panicles; causes flowers to dry up and drop without fruit set.</p>
+
+                        <div class="condition-specs">
+                            <div class="spec-row">
+                                <span class="spec-key">Part:</span>
+                                <span class="spec-val">Inflorescences (panicles), tender leaves, pea fruit</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">Trigger:</span>
+                                <span class="spec-val">Cool nights (10–14°C) &amp; warm days (27–31°C) during bloom</span>
+                            </div>
+                        </div>
+
+                        <details class="condition-advisory">
+                            <summary class="advisory-toggle">
+                                <span>Farmer Field Advisory</span>
+                                <svg class="advisory-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                            </summary>
+                            <div class="advisory-body">
+                                <div class="advisory-item">
+                                    <strong>Visual Clues:</strong>
+                                    White flour-like dust on panicles and young leaves; blossoms turn purple-brown and drop; leaves curl and turn leathery.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Canopy Aeration:</strong>
+                                    Prune dense inner branches to eliminate shaded, humid air pockets inside the tree crown.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Protective Sprays:</strong>
+                                    Wettable Sulfur 80 WP @ 2.0–2.5 g/L at panicle emergence. Follow with Hexaconazole 5 EC @ 1.0 ml/L or Dinocap @ 1.0 ml/L at bud break.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Temperature Warning:</strong>
+                                    Never spray sulfur when temperatures exceed 32°C to prevent sulfur chemical scorch.
+                                </div>
+                            </div>
+                        </details>
+
+                        <span class="condition-foot">Improve airflow through canopy &amp; avoid shade pockets</span>
                     </li>
-                    <li class="condition-card">
+
+                    <li class="condition-card" data-category="fungal">
                         <div class="condition-top">
                             <span class="condition-tag">Fungal</span>
                             <span class="condition-dot" aria-hidden="true"></span>
                         </div>
                         <h3>Sooty Mould</h3>
-                        <p>Black, sooty film on leaves, usually growing on honeydew left by sap-sucking insects.</p>
-                        <span class="condition-foot">Treat the insects, not just the mould</span>
+                        <p class="condition-latin">Capnodium mangiferae / Meliola spp.</p>
+                        <p class="condition-desc">Black, sooty film on leaves and twigs, growing on sticky honeydew left behind by sap-sucking mango hoppers and scales.</p>
+
+                        <div class="condition-specs">
+                            <div class="spec-row">
+                                <span class="spec-key">Part:</span>
+                                <span class="spec-val">Upper leaf surfaces, twigs, fruit skin</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">Trigger:</span>
+                                <span class="spec-val">Secondary to sap-sucking insect infestations</span>
+                            </div>
+                        </div>
+
+                        <details class="condition-advisory">
+                            <summary class="advisory-toggle">
+                                <span>Farmer Field Advisory</span>
+                                <svg class="advisory-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                            </summary>
+                            <div class="advisory-body">
+                                <div class="advisory-item">
+                                    <strong>Visual Clues:</strong>
+                                    Velvety black layer that easily rubs off with your thumb; leaf under the layer is green but deprived of sunlight.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Starch Peel Wash:</strong>
+                                    Spray 1–2% boiled starch solution (boiled maida or rice starch @ 15 g/L). In dry sunlight it flakes off, peeling the black mould!
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Target the Insects:</strong>
+                                    Eradicate honeydew-secreting hoppers with Neem oil (5 ml/L) or Thiamethoxam 25 WG @ 0.2 g/L or Imidacloprid @ 0.3 ml/L.
+                                </div>
+                                <div class="advisory-item">
+                                    <strong>Canopy Wash:</strong>
+                                    Follow with a mild copper or wettable sulfur wash to clean remaining residue.
+                                </div>
+                            </div>
+                        </details>
+
+                        <span class="condition-foot">Treat the sucking insects, not just the surface mould</span>
                     </li>
                 </ul>
+
+                <!-- Seasonal Spray & Management Calendar -->
+                <div class="farmer-guide-block">
+                    <div class="guide-block-head">
+                        <div>
+                            <p class="eyebrow">Seasonal Orchard Schedule</p>
+                            <h3>Year-round growth stages &amp; spray timing</h3>
+                        </div>
+                        <p class="guide-block-desc">Disease prevention in mango orchards depends strictly on seasonal timing. Aligning your scouting and protective measures with tree phenology prevents 90% of yield losses.</p>
+                    </div>
+
+                    <div class="calendar-grid">
+                        <article class="calendar-card">
+                            <span class="calendar-badge">Stage 01 · Post-Harvest</span>
+                            <h4>Dormancy &amp; Sanitation</h4>
+                            <span class="calendar-months">August – October</span>
+                            <ul class="calendar-list">
+                                <li><strong>Orchard action:</strong> Prune criss-cross, dead, and diseased twigs back 10 cm into green wood. Rake, burn or deep-bury fallen leaves and mummies.</li>
+                                <li><strong>Protective spray:</strong> Bordeaux mixture (1%) or Copper Oxychloride 50 WP @ 3.0 g/L immediately after pruning to sterilize wounds.</li>
+                                <li><strong>Nutrition:</strong> Apply well-rotted FYM (30–50 kg/tree) and basal phosphate/potash around the drip line.</li>
+                            </ul>
+                        </article>
+
+                        <article class="calendar-card">
+                            <span class="calendar-badge">Stage 02 · Vegetative Flush</span>
+                            <h4>New Shoot Protection</h4>
+                            <span class="calendar-months">October – December</span>
+                            <ul class="calendar-list">
+                                <li><strong>Orchard action:</strong> Scout tender copper-red flushes for Cutting Weevil leaf cuts and Gall Midge blisters. Collect severed leaves.</li>
+                                <li><strong>Protective spray:</strong> 5% Neem Seed Kernel Extract (NSKE) or Spinosad 45 SC @ 0.3 ml/L on tender flushes.</li>
+                                <li><strong>Disease alert:</strong> Spray Mancozeb 75 WP @ 2.0 g/L if rainy periods occur to stop Anthracnose leaf spots.</li>
+                            </ul>
+                        </article>
+
+                        <article class="calendar-card">
+                            <span class="calendar-badge">Stage 03 · Panicle Flush</span>
+                            <h4>Blossom Protection</h4>
+                            <span class="calendar-months">December – February</span>
+                            <ul class="calendar-list">
+                                <li><strong>Orchard action:</strong> Watch for blossom blights. Powdery mildew and Anthracnose can destroy 80% of bloom in 48 hours of cloudy weather.</li>
+                                <li><strong>Protective spray:</strong> Wettable Sulfur 80 WP @ 2.0 g/L or Hexaconazole 5 EC @ 1.0 ml/L right before blossoms open.</li>
+                                <li><strong>Watering:</strong> Minimize irrigation during flower bud induction to prevent vegetative shoots replacing flower panicles.</li>
+                            </ul>
+                        </article>
+
+                        <article class="calendar-card calendar-card-alert">
+                            <span class="calendar-badge calendar-badge-alert">Stage 04 · Full Bloom</span>
+                            <h4>Pollinator Refuge (Zero Spray)</h4>
+                            <span class="calendar-months">February – March</span>
+                            <ul class="calendar-list">
+                                <li><strong>CRITICAL RULE:</strong> <em>STRICTLY NO INSECTICIDE SPRAYS!</em> Mango blossoms require honeybees, wild stingless bees, and syrphids for pollination.</li>
+                                <li><strong>Orchard action:</strong> Protect pollinator populations. Keep honeybee boxes in the orchard (2–3 boxes/acre).</li>
+                                <li><strong>Emergency mildew:</strong> If severe powdery mildew hits during bloom, use only gentle biological spray late in the evening.</li>
+                            </ul>
+                        </article>
+
+                        <article class="calendar-card">
+                            <span class="calendar-badge">Stage 05 · Fruit Set</span>
+                            <h4>Pea to Marble Stage</h4>
+                            <span class="calendar-months">March – May</span>
+                            <ul class="calendar-list">
+                                <li><strong>Orchard action:</strong> Guard against premature fruit drop, Anthracnose tear-stains, and Bacterial Canker fruit cracking.</li>
+                                <li><strong>Protective spray:</strong> Copper Hydroxide @ 2.0 g/L or Mancozeb 75 WP @ 2.0 g/L after fruit set. Add Boron (0.1%) to strengthen skin.</li>
+                                <li><strong>Irrigation:</strong> Resume regular light irrigation under the canopy drip-line; maintain 10 cm organic straw mulch.</li>
+                            </ul>
+                        </article>
+
+                        <article class="calendar-card">
+                            <span class="calendar-badge">Stage 06 · Pre-Harvest</span>
+                            <h4>Maturation &amp; Safe Harvest</h4>
+                            <span class="calendar-months">May – July</span>
+                            <ul class="calendar-list">
+                                <li><strong>Orchard action:</strong> Install Methyl Eugenol pheromone traps (10 traps/ha) for fruit flies; bag fruit for export quality.</li>
+                                <li><strong>Pre-Harvest Interval (PHI):</strong> Stop ALL chemical fungicide and pesticide sprays at least 15–21 days prior to picking fruit.</li>
+                                <li><strong>Harvest hygiene:</strong> Harvest with 1 cm stem attached to prevent latex burn; wash fruits in warm water (52°C for 5 min) against post-harvest rot.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- 5 Golden Field Rules -->
+                <div class="farmer-guide-block">
+                    <div class="guide-block-head">
+                        <div>
+                            <p class="eyebrow">Good Agricultural Practices</p>
+                            <h3>The 5 golden rules for mango growers</h3>
+                        </div>
+                        <p class="guide-block-desc">Simple agronomic habits prevent outbreaks before they start, save thousands on chemical sprays, and protect fruit quality.</p>
+                    </div>
+
+                    <div class="rules-grid">
+                        <article class="rule-card">
+                            <div class="rule-num">01</div>
+                            <h4>Orchard Floor Sanitation</h4>
+                            <p><strong>The 70% Rule:</strong> Over 70% of Anthracnose fungal spores and overwintering weevil pupae survive in fallen leaves, weeds, and mummified fruits on the ground. Rake the orchard floor every 2 weeks. Burn or deep-bury (&gt;40 cm) infected debris outside the orchard.</p>
+                        </article>
+
+                        <article class="rule-card">
+                            <div class="rule-num">02</div>
+                            <h4>Tool Sterilization Between Trees</h4>
+                            <p><strong>Prevent Mechanical Transmission:</strong> Bacterial Canker (<em>Xanthomonas</em>) and Die Back (<em>Lasiodiplodia</em>) are easily carried from sick trees to healthy trees on secateurs and saws. Dip blades in 10% bleach or 70% alcohol between trees. Paint cuts &gt;2 cm with Copper paste.</p>
+                        </article>
+
+                        <article class="rule-card">
+                            <div class="rule-num">03</div>
+                            <h4>Spray Timing &amp; Weather Discipline</h4>
+                            <p><strong>Avoid Heat &amp; Rain Loss:</strong> Always spray during calm early mornings (6:00–9:00 AM) or late afternoons (4:30–6:30 PM). Never spray in midday heat above 32°C (causes leaf scorch/phytotoxicity) or when rain is expected within 4 hours. Ensure underside leaf coverage.</p>
+                        </article>
+
+                        <article class="rule-card">
+                            <div class="rule-num">04</div>
+                            <h4>Fungicide Rotation (FRAC Codes)</h4>
+                            <p><strong>Stop Resistance Build-up:</strong> Never spray single-site systemic fungicides (like Carbendazim or Hexaconazole) more than two times consecutively. Always rotate with multi-site contact protectants like Copper Oxychloride or Mancozeb to prevent resistant fungal strains.</p>
+                        </article>
+
+                        <article class="rule-card">
+                            <div class="rule-num">05</div>
+                            <h4>Canopy Sunlight &amp; Root Drip Watering</h4>
+                            <p><strong>Keep Foliage Dry:</strong> Fungi and bacteria require a film of standing water on the leaf surface to penetrate. Never use overhead sprinklers that wet the canopy. Use drip irrigation around the tree drip-line. Center-prune water shoots annually so sunlight reaches inner branches.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Fast Field Triage Matrix -->
+                <div class="farmer-guide-block">
+                    <div class="guide-block-head">
+                        <div>
+                            <p class="eyebrow">Field Triage Matrix</p>
+                            <h3>Quick symptom-to-action lookup</h3>
+                        </div>
+                        <p class="guide-block-desc">When inspecting trees in the orchard, check this visual diagnostic matrix to immediately connect what you see to the right agronomic action.</p>
+                    </div>
+
+                    <div class="matrix-table-wrap">
+                        <table class="matrix-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">What You See in Orchard</th>
+                                    <th scope="col">Suspected Issue</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Key Affected Stage</th>
+                                    <th scope="col">First Immediate Action</th>
+                                    <th scope="col">Recommended Treatment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Cleanly severed leaf edges</strong> or sliced blades under tree</td>
+                                    <td>Cutting Weevil</td>
+                                    <td><span class="matrix-tag tag-pest">Pest</span></td>
+                                    <td>Tender leaf flush</td>
+                                    <td>Collect &amp; burn cut leaves containing eggs</td>
+                                    <td>Spinosad 45 SC @ 0.3 ml/L or 5% Neem extract</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Raised pimple-like blisters / galls</strong> distorting new leaves</td>
+                                    <td>Gall Midge</td>
+                                    <td><span class="matrix-tag tag-pest">Pest</span></td>
+                                    <td>New shoots &amp; flushes</td>
+                                    <td>Prune galled leaves before adult midges emerge</td>
+                                    <td>Imidacloprid 17.8 SL @ 0.3 ml/L on tender flushes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>White powdery coating</strong> on leaves, panicles &amp; young fruit</td>
+                                    <td>Powdery Mildew</td>
+                                    <td><span class="matrix-tag tag-fungal">Fungal</span></td>
+                                    <td>Flowering &amp; fruit set</td>
+                                    <td>Thin inner canopy to improve air circulation</td>
+                                    <td>Wettable Sulfur 80 WP @ 2 g/L or Hexaconazole 1 ml/L</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Black soot / velvety charcoal crust</strong> wiping off with thumb</td>
+                                    <td>Sooty Mould</td>
+                                    <td><span class="matrix-tag tag-fungal">Fungal</span></td>
+                                    <td>Mature foliage &amp; twigs</td>
+                                    <td>Spray 1–2% boiled starch solution to flake off crust</td>
+                                    <td>Treat honeydew pests with Neem oil 5 ml/L or Thiamethoxam</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Water-soaked dark angular spots</strong> with bright yellow halo</td>
+                                    <td>Bacterial Canker</td>
+                                    <td><span class="matrix-tag tag-bacterial">Bacterial</span></td>
+                                    <td>Leaves, twigs &amp; fruit</td>
+                                    <td>Prune shoots during dry weather only; sterilize tools</td>
+                                    <td>Copper Oxychloride 2.5 g/L + Streptocycline 0.15 g/L</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sunken dark brown spots</strong> with shot-holes &amp; blossom blight</td>
+                                    <td>Anthracnose</td>
+                                    <td><span class="matrix-tag tag-fungal">Fungal</span></td>
+                                    <td>All stages (wet weather)</td>
+                                    <td>Rake &amp; burn mummies and blighted twigs</td>
+                                    <td>Copper Oxychloride 3 g/L or Carbendazim 1 g/L</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Branch drying from tip backwards</strong>, brown leaves stay attached</td>
+                                    <td>Die Back</td>
+                                    <td><span class="matrix-tag tag-fungal">Fungal</span></td>
+                                    <td>Post-pruning &amp; drought</td>
+                                    <td>Prune 10 cm into green healthy wood; burn trimmings</td>
+                                    <td>Paint cuts with Copper paste; spray Carbendazim 1 g/L</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Uniform rich green</strong>, glossy blade, no spots or blisters</td>
+                                    <td>Healthy Leaf</td>
+                                    <td><span class="matrix-tag tag-healthy">Healthy</span></td>
+                                    <td>All seasons</td>
+                                    <td>Maintain regular weekly scouting (20 leaves/tree)</td>
+                                    <td>Annual FYM (30–50 kg) + Zinc (0.2%) &amp; Boron (0.1%) sprays</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
 

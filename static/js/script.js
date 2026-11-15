@@ -517,4 +517,29 @@
         var scanner = document.getElementById("scan");
         if (scanner) scrollToElement(scanner, 88);
     });
+
+    /* ---------- Field guide category filter ---------- */
+
+    var filterButtons = document.querySelectorAll(".condition-filter .filter-btn");
+    var conditionCards = document.querySelectorAll(".condition-grid .condition-card");
+
+    if (filterButtons.length && conditionCards.length) {
+        filterButtons.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                var filter = btn.dataset.filter;
+
+                filterButtons.forEach(function (b) {
+                    var isActive = b === btn;
+                    b.classList.toggle("is-active", isActive);
+                    b.setAttribute("aria-selected", isActive ? "true" : "false");
+                });
+
+                conditionCards.forEach(function (card) {
+                    var category = card.dataset.category;
+                    var match = filter === "all" || category === filter;
+                    card.hidden = !match;
+                });
+            });
+        });
+    }
 })();
