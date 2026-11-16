@@ -17,7 +17,16 @@ except ImportError:
 
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_DIR = BASE_DIR / "models"
-MODEL_PATH = MODEL_DIR / "disease_detector.keras"
+
+# Must match the file name stored on Google Drive (`Content-Disposition`), so the
+# on-disk artifact and the remote source stay unambiguous.
+MODEL_FILENAME = "Mango_Leaf_disease_detector.keras"
+MODEL_PATH = MODEL_DIR / MODEL_FILENAME
+
+# Earlier releases saved the same Drive file under this name. Reuse it instead of
+# downloading ~100 MB again.
+LEGACY_MODEL_PATH = MODEL_DIR / "disease_detector.keras"
+
 UPLOAD_DIR = BASE_DIR / "uploads"
 
 # Google Drive model file (direct download link)
@@ -48,13 +57,20 @@ label_map = {
 def download_model():
     """Download the trained model if it is not available locally."""
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
+    if LEGACY_MODEL_PATH.is_file() and not MODEL_PATH.is_file():
+        print(f"Found model at {LEGACY_MODEL_PATH}. Renaming to {MODEL_FILENAME}...")
+        LEGACY_MODEL_PATH.replace(MODEL_PATH)
+        return
+
     print(f"Model not found at {MODEL_PATH}. Downloading from Google Drive...")
-    gdown.download(MODEL_URL, str(MODEL_PATH), quiet=False)
-    if not MODEL_PATH.is_file():
+    downloaded = gdown.download(MODEL_URL, str(MODEL_PATH), quiet=False)
+    if downloaded is None or not MODEL_PATH.is_file():
         raise RuntimeError(
             f"Could not download the model to {MODEL_PATH}. "
             "Download it manually and place it there."
         )
+
+    print(f"Saved model to {MODEL_PATH}")
 
 
 if not MODEL_PATH.is_file():

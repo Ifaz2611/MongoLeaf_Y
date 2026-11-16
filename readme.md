@@ -118,11 +118,15 @@ Get-ChildItem Dataset -Directory | ForEach-Object { "{0}: {1}" -f $_.Name, (Get-
 
 ## Model File
 
-`app.py` looks for the model at `models/disease_detector.keras`. If it is
-missing, it downloads it automatically from a Google Drive link using `gdown`
-(no manual step required). The model is ~100 MB and is not committed to the
-repo — place a compatible `.keras` file there if you want to use your own
-weights.
+`app.py` looks for the model at `models/Mango_Leaf_disease_detector.keras`
+(the same name the file has on Google Drive). If it is missing, it downloads it
+automatically from the Google Drive link using `gdown` (no manual step
+required). The model is ~100 MB and is not committed to the repo — place a
+compatible `.keras` file there if you want to use your own weights.
+
+Upgrading from an older checkout? The previously downloaded
+`models/disease_detector.keras` is renamed automatically, so the ~100 MB file
+is not downloaded twice.
 
 Uploaded images are written to `uploads/` and deleted after each prediction.
 Both `models/` and `uploads/` are created automatically and git-ignored.
