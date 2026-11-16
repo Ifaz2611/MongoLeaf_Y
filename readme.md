@@ -66,7 +66,7 @@ Open http://127.0.0.1:5000 in a browser.
 The model was trained on the **Mango Leaf Disease Dataset** (MangoLeafBD),
 available on Kaggle:
 
-**https://www.kaggle.com/datasets/warcoder/mango-leaf-disease-dataset**
+**https://www.kaggle.com/datasets/aryashah2k/mango-leaf-disease-dataset**
 
 It contains 4,000 mango leaf images across 8 classes (500 per class), matching
 the `label_map` in `app.py`. The dataset is **not committed to this
