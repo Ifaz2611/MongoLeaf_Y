@@ -9,10 +9,8 @@ import tensorflow as tf
 from flask import Flask, jsonify, render_template, request
 from flask_cors import CORS
 
-try:
-    from tensorflow.keras.utils import img_to_array, load_img
-except ImportError:
-    from tensorflow.keras.preprocessing.image import img_to_array, load_img
+img_to_array = tf.keras.utils.img_to_array
+load_img = tf.keras.utils.load_img
 
 
 BASE_DIR = Path(__file__).resolve().parent
